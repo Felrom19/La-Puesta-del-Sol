@@ -105,11 +105,11 @@ main {
 
 @keyframes changeCover {
   0% {
-    background-image: url('images/foto-10.jpg');
+    background-image: url('cover-try(1).jpeg');
   }
 
   30% {
-    background-image: url('images/foto-10.jpg');
+    background-image: url('cover-try(1).jpeg');
   }
   70% {
     background-image: url('images/image-2.JPEG');
@@ -390,4 +390,5 @@ figure {
 
 .hidden-fotos{
   display: none;
+
 }
