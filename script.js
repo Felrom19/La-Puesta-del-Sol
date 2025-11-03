@@ -80,6 +80,15 @@ previousButton.addEventListener('click', function(event) {
     showPreviousImage();
 });
 
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight' || event.keyCode === 39) {
+       showNextImage();
+    }
+    else if (event.key === 'ArrowLeft' || event.keyCode === 37) {
+       showPreviousImage();
+    }
+    
+});
 
 // Listener for closing the Lightbox
 lightBox.addEventListener('click', function(event) {
@@ -90,4 +99,5 @@ lightBox.addEventListener('click', function(event) {
         currentGalleryImages = [];
         currentIndex = -1;
     }
+
 });
