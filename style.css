@@ -105,11 +105,11 @@ main {
 
 @keyframes changeCover {
   0% {
-    background-image: url('cover-try(1).jpeg');
+    background-image: url('images/cover-try(1).jpeg');
   }
 
   30% {
-    background-image: url('cover-try(1).jpeg');
+    background-image: url('images/cover-try(1).jpeg');
   }
   70% {
     background-image: url('images/image-2.JPEG');
@@ -392,3 +392,4 @@ figure {
   display: none;
 
 }
+
