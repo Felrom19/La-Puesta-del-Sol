@@ -34,7 +34,7 @@ header {
   position: fixed;
   padding: 1rem;  
   width: 100%;
-  height: 35%;
+  height: 30vh;
 }
   
 }
@@ -393,6 +393,7 @@ figure {
   display: none;
 
 }
+
 
 
 
