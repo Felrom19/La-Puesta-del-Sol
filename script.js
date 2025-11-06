@@ -90,6 +90,12 @@ document.addEventListener('keydown', function(event) {
     
 });
 
+document.addEventListener(`keydown`, function(event){
+    if(event.key == `Escape`){
+        lightBox.style.display = "none"
+    }
+})
+
 // Listener for closing the Lightbox
 lightBox.addEventListener('click', function(event) {
     // Check if the click was directly on the lightbox background OR the close button
@@ -101,3 +107,4 @@ lightBox.addEventListener('click', function(event) {
     }
 
 });
+
