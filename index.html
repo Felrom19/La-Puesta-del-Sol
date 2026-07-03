@@ -1,323 +1,1019 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Puesta del Sol | Hotel Boutique en Filandia, Eje Cafetero</title>
+<meta name="description" content="La Puesta del Sol es un hotel boutique íntimo de cinco habitaciones en Filandia, Quindío — con encanto artesanal y vistas panorámicas del Paisaje Cultural Cafetero.">
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJFDZ2CEE1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-TJFDZ2CEE1');
 </script>
-  <title>La Puesta del Sol | Hotel Boutique </title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="images/foto-10.jpg">
-  <link rel="preload" as="image" href="images/image-2.JPEG">
+
+<link rel="icon" href="images/FullLogo_Transparent_NoBuffer.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   LA PUESTA DEL SOL — Boutique Redesign (bilingual ES/EN)
+   Palette derived from the brand logo (sunset coral → gold,
+   teal mountains, cream & terracotta).
+   ============================================================ */
+
+:root{
+  --coral:        #DE7F63;
+  --coral-deep:   #C75F42;
+  --gold:         #E7A64F;
+  --gold-soft:    #EEC17C;
+  --teal:         #3C6B69;
+  --teal-deep:    #2E5453;
+  --terracotta:   #B85C39;
+
+  --ink:          #322B25;
+  --muted:        #7C6F62;
+  --line:         #E4D8C6;
+
+  --cream:        #FBF5EC;
+  --sand:         #F4E9D8;
+  --sand-deep:    #EFE1CD;
+  --warm-white:   #FFFDF8;
+
+  --shadow-sm: 0 4px 18px rgba(80,55,35,.10);
+  --shadow-md: 0 14px 40px rgba(80,55,35,.16);
+  --shadow-lg: 0 30px 70px rgba(60,40,25,.28);
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans:  "Jost", "Helvetica Neue", Arial, sans-serif;
+
+  --wrap: 1200px;
+  --radius: 16px;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html{ scroll-behavior:smooth; scroll-padding-top:84px; -webkit-text-size-adjust:100%; }
+
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--cream);
+  font-weight:300;
+  line-height:1.75;
+  overflow-x:hidden;
+}
+
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+
+h1,h2,h3,h4{ font-family:var(--serif); font-weight:600; line-height:1.1; color:var(--ink); }
+
+.eyebrow{
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:.72rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--coral-deep);
+}
+
+.wrap{ max-width:var(--wrap); margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem); }
+
+.btn{
+  display:inline-flex; align-items:center; gap:.6rem;
+  font-family:var(--sans); font-weight:500; font-size:.82rem;
+  letter-spacing:.16em; text-transform:uppercase;
+  padding:1rem 2rem; border-radius:100px; cursor:pointer;
+  border:1px solid transparent; transition:.35s ease; white-space:nowrap;
+}
+.btn--primary{ background:var(--coral); color:#fff; box-shadow:0 10px 26px rgba(199,95,66,.32); }
+.btn--primary:hover{ background:var(--coral-deep); transform:translateY(-3px); box-shadow:0 16px 34px rgba(199,95,66,.42); }
+.btn--ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,.7); }
+.btn--ghost:hover{ background:rgba(255,255,255,.14); border-color:#fff; transform:translateY(-3px); }
+.btn--outline{ background:transparent; color:var(--teal-deep); border-color:var(--teal); }
+.btn--outline:hover{ background:var(--teal-deep); color:#fff; border-color:var(--teal-deep); transform:translateY(-3px); }
+
+/* ---------- Scroll reveal ---------- */
+[data-reveal]{ opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+[data-reveal].in{ opacity:1; transform:none; }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.nav{
+  position:fixed; top:0; left:0; width:100%; z-index:1000;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:.7rem clamp(1.25rem,4vw,3rem);
+  transition:background .4s ease, box-shadow .4s ease, padding .4s ease;
+}
+.nav__logo{ display:flex; align-items:center; }
+.nav__logo img{ height:64px; width:auto; transition:height .4s ease; }
+.nav__links{ display:flex; align-items:center; gap:2.2rem; list-style:none; }
+.nav__links a{
+  font-size:.78rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase;
+  color:#fff; position:relative; padding:.3rem 0; transition:color .3s;
+}
+.nav__links a.nav__link::after{
+  content:""; position:absolute; left:0; bottom:-2px; width:0; height:1.5px;
+  background:var(--gold); transition:width .3s ease;
+}
+.nav__links a.nav__link:hover::after{ width:100%; }
+.nav__actions{ display:flex; align-items:center; gap:.85rem; }
+.nav__cta{ padding:.7rem 1.4rem; font-size:.72rem; }
+.nav__cta-mobile{ display:none; }
+.nav__toggle{ display:none; background:none; border:none; cursor:pointer; flex-direction:column; gap:5px; padding:8px; }
+.nav__toggle span{ display:block; width:26px; height:2px; background:#fff; transition:.3s; }
+
+/* scrolled state */
+.nav.scrolled{ background:rgba(251,245,236,.94); box-shadow:0 2px 24px rgba(80,55,35,.12); backdrop-filter:blur(10px); }
+.nav.scrolled .nav__logo img{ height:52px; }
+.nav.scrolled .nav__links a{ color:var(--ink); }
+.nav.scrolled .nav__toggle span{ background:var(--ink); }
+
+/* ---------- Language selector ---------- */
+.lang{ position:relative; }
+.lang__btn{
+  display:flex; align-items:center; gap:.5rem; cursor:pointer;
+  padding:.5rem .8rem; border-radius:100px; font-family:var(--sans);
+  font-size:.78rem; font-weight:500; letter-spacing:.08em;
+  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.42); color:#fff;
+  transition:.35s ease;
+}
+.lang__btn:hover{ background:rgba(255,255,255,.26); }
+.flag{ display:block; border-radius:3px; box-shadow:0 0 0 1px rgba(0,0,0,.10); }
+.lang__btn .flag{ width:21px; height:14px; }
+.lang__btn .chev{ width:11px; height:11px; transition:transform .3s; opacity:.9; }
+.lang.open .lang__btn .chev{ transform:rotate(180deg); }
+.nav.scrolled .lang__btn{ background:var(--warm-white); border-color:var(--line); color:var(--ink); }
+.lang__menu{
+  position:absolute; top:calc(100% + 10px); right:0; min-width:214px;
+  background:#fff; border-radius:14px; box-shadow:var(--shadow-md);
+  border:1px solid var(--line); padding:.4rem; opacity:0; visibility:hidden;
+  transform:translateY(-8px); transition:.25s ease; z-index:1200;
+}
+.lang.open .lang__menu{ opacity:1; visibility:visible; transform:none; }
+.lang__opt{
+  display:flex; align-items:center; gap:.75rem; width:100%;
+  padding:.7rem .85rem; border-radius:10px; cursor:pointer; border:none; background:none;
+  font-family:var(--sans); font-size:.94rem; color:var(--ink); text-align:left; transition:.2s;
+}
+.lang__opt .flag{ width:24px; height:16px; flex:none; }
+.lang__opt:hover{ background:var(--sand); }
+.lang__opt .check{ margin-left:auto; width:16px; height:16px; color:var(--coral-deep); opacity:0; }
+.lang__opt.active{ background:#FBEDE7; color:var(--coral-deep); font-weight:600; }
+.lang__opt.active .check{ opacity:1; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{ position:relative; height:100vh; min-height:620px; overflow:hidden; display:flex; align-items:center; }
+.hero__slides{ position:absolute; inset:0; }
+.hero__slide{
+  position:absolute; inset:0; background-size:cover; background-position:center;
+  opacity:0; transition:opacity 1.8s ease-in-out; transform:scale(1.06); animation:kenburns 12s ease-out forwards;
+}
+.hero__slide.active{ opacity:1; }
+@keyframes kenburns{ to{ transform:scale(1); } }
+.hero::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(30,20,12,.42) 0%, rgba(30,20,12,.12) 35%, rgba(30,20,12,.28) 70%, rgba(25,16,10,.72) 100%);
+}
+.hero__content{ position:relative; z-index:2; color:#fff; max-width:760px; }
+.hero .eyebrow{ color:var(--gold-soft); }
+.hero h1{
+  color:#fff; font-size:clamp(3.2rem,9vw,7rem); font-weight:600; letter-spacing:.01em;
+  margin:1rem 0 1.2rem; line-height:.98; text-shadow:0 4px 30px rgba(0,0,0,.35);
+}
+.hero p.lead{
+  font-size:clamp(1.05rem,2.2vw,1.45rem); font-weight:300; max-width:560px;
+  color:rgba(255,255,255,.94); text-shadow:0 2px 16px rgba(0,0,0,.35);
+}
+.hero__actions{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.4rem; }
+.hero__scroll{
+  position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:2;
+  color:rgba(255,255,255,.85); font-size:.68rem; letter-spacing:.25em; text-transform:uppercase;
+  display:flex; flex-direction:column; align-items:center; gap:.5rem;
+}
+.hero__scroll span{ width:1px; height:38px; background:linear-gradient(rgba(255,255,255,.8),transparent); animation:pulse 2s infinite; }
+@keyframes pulse{ 0%,100%{opacity:.4;} 50%{opacity:1;} }
+
+/* ============================================================
+   SECTION SHELL
+   ============================================================ */
+section{ position:relative; }
+.section-head{ text-align:center; max-width:640px; margin:0 auto 3.5rem; }
+.section-head h2{ font-size:clamp(2.4rem,5vw,3.6rem); margin:.8rem 0 1rem; }
+.section-head p{ color:var(--muted); font-size:1.05rem; }
+.pad{ padding:clamp(4.5rem,9vw,8rem) 0; }
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{ background:var(--warm-white); }
+.about__grid{ display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(2rem,6vw,5rem); align-items:center; }
+.about__media{ position:relative; }
+.about__media img{
+  width:100%; height:100%; min-height:440px; object-fit:cover; border-radius:var(--radius);
+  box-shadow:var(--shadow-md);
+}
+.about__media::before{
+  content:""; position:absolute; inset:18px -18px -18px 18px; border:1px solid var(--gold);
+  border-radius:var(--radius); z-index:-1;
+}
+.about__body h2{ font-size:clamp(2.2rem,4.5vw,3.4rem); margin:.7rem 0 1.4rem; }
+.about__body p{ color:var(--muted); margin-bottom:1.2rem; }
+.about__chips{ display:flex; flex-wrap:wrap; gap:.7rem; margin-top:2rem; }
+.chip{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--sand); color:var(--teal-deep);
+  padding:.55rem 1.1rem; border-radius:100px; font-size:.8rem; font-weight:400;
+  border:1px solid var(--line);
+}
+.chip svg{ width:15px; height:15px; flex:none; }
+
+/* ============================================================
+   ROOMS
+   ============================================================ */
+.rooms{ background:var(--cream); }
+.room{
+  display:grid; grid-template-columns:1.15fr 1fr; gap:clamp(1.6rem,4vw,3.5rem);
+  align-items:center; margin-bottom:clamp(3.5rem,8vw,6.5rem);
+}
+.room:last-child{ margin-bottom:0; }
+.room--reverse .room__media{ order:2; }
+
+.room-gallery{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:1fr; gap:.6rem; }
+.room-gallery .room__lead{
+  grid-column:1 / -1; aspect-ratio:16/10; width:100%; height:100%; object-fit:cover;
+  border-radius:var(--radius); box-shadow:var(--shadow-md); cursor:pointer; transition:.5s ease;
+}
+.room-gallery .room__thumb{
+  aspect-ratio:1/1; width:100%; height:100%; object-fit:cover; border-radius:12px;
+  box-shadow:var(--shadow-sm); cursor:pointer; transition:.4s ease;
+}
+.room-gallery img:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); filter:brightness(1.04); }
+.room__more{ position:relative; }
+.room__more-count{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(46,84,83,.62); color:#fff; border-radius:12px; font-size:.82rem;
+  letter-spacing:.06em; pointer-events:none; font-weight:400; backdrop-filter:blur(1px);
+}
+.room--single .room-gallery{ grid-template-columns:1fr; }
+.room--single .room__lead{ aspect-ratio:4/5; }
+
+.room__info .price-tag{
+  font-family:var(--sans); font-size:.74rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--coral-deep); font-weight:500;
+}
+.room__info h3{ font-size:clamp(1.9rem,3.5vw,2.6rem); margin:.5rem 0 1rem; }
+.room__info p{ color:var(--muted); margin-bottom:1.4rem; }
+.specs{ display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.6rem; }
+.spec{
+  display:inline-flex; align-items:center; gap:.45rem; font-size:.78rem; color:var(--teal-deep);
+  background:var(--sand); border:1px solid var(--line); padding:.45rem .9rem; border-radius:8px;
+}
+.spec svg{ width:14px; height:14px; flex:none; }
+.room__price{
+  display:flex; align-items:baseline; gap:.5rem; margin-bottom:.4rem;
+  font-family:var(--serif); font-size:1.9rem; font-weight:600; color:var(--ink);
+}
+.room__price small{ font-family:var(--sans); font-size:.72rem; color:var(--muted); font-weight:300; letter-spacing:.04em; }
+.room__note{ font-size:.78rem; color:var(--muted); margin-bottom:1.5rem; }
+.room__info .btn{ margin-top:.4rem; }
+
+/* ============================================================
+   EXPERIENCES
+   ============================================================ */
+.experiences{ background:var(--teal-deep); color:#fff; }
+.experiences .section-head h2{ color:#fff; }
+.experiences .section-head .eyebrow{ color:var(--gold-soft); }
+.experiences .section-head p{ color:rgba(255,255,255,.8); }
+.exp-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+.exp-card{
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius); padding:2rem 1.8rem; transition:.4s ease;
+}
+.exp-card:hover{ background:rgba(255,255,255,.11); transform:translateY(-5px); }
+.exp-card__icon{
+  width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg,var(--coral),var(--gold)); margin-bottom:1.2rem;
+}
+.exp-card__icon svg{ width:26px; height:26px; stroke:#fff; }
+.exp-card h4{ color:#fff; font-size:1.5rem; margin-bottom:.5rem; }
+.exp-card p{ color:rgba(255,255,255,.78); font-size:.92rem; line-height:1.7; }
+
+/* ============================================================
+   BOOK / CONTACT
+   ============================================================ */
+.book{ background:var(--sand); }
+.book__banner{
+  background:linear-gradient(135deg,var(--coral) 0%, var(--terracotta) 100%);
+  border-radius:calc(var(--radius) + 6px); color:#fff; text-align:center;
+  padding:clamp(2.6rem,6vw,4.5rem) clamp(1.5rem,5vw,4rem); box-shadow:var(--shadow-lg);
+  position:relative; overflow:hidden;
+}
+.book__banner::before{
+  content:""; position:absolute; top:-40%; right:-10%; width:380px; height:380px; border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,.18), transparent 70%);
+}
+.book__banner .eyebrow{ color:rgba(255,255,255,.85); }
+.book__banner h2{ color:#fff; font-size:clamp(2.2rem,5vw,3.6rem); margin:.8rem 0 1rem; }
+.book__banner p{ color:rgba(255,255,255,.92); max-width:560px; margin:0 auto 2rem; font-size:1.05rem; }
+.book__banner .btn--light{ background:#fff; color:var(--coral-deep); box-shadow:0 12px 30px rgba(0,0,0,.2); }
+.book__banner .btn--light:hover{ transform:translateY(-3px); box-shadow:0 18px 40px rgba(0,0,0,.28); background:#fff; }
+
+.contact__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,4vw,3rem); margin-top:clamp(2.5rem,6vw,4.5rem); align-items:stretch; }
+.contact__cards{ display:flex; flex-direction:column; gap:1rem; }
+.contact-card{
+  display:flex; align-items:center; gap:1.1rem; background:var(--warm-white);
+  border:1px solid var(--line); border-radius:14px; padding:1.3rem 1.5rem; transition:.35s ease;
+}
+.contact-card:hover{ transform:translateX(6px); box-shadow:var(--shadow-sm); border-color:var(--gold); }
+.contact-card__icon{
+  width:48px; height:48px; border-radius:12px; flex:none; display:flex; align-items:center; justify-content:center;
+  background:var(--sand); color:var(--teal-deep);
+}
+.contact-card__icon svg{ width:22px; height:22px; }
+.contact-card small{ display:block; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:.15rem; }
+.contact-card strong{ font-weight:500; font-size:1.02rem; color:var(--ink); word-break:break-word; }
+.contact__map iframe{ width:100%; height:100%; min-height:340px; border:0; border-radius:var(--radius); box-shadow:var(--shadow-sm); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{ background:#241E19; color:rgba(255,255,255,.72); padding:clamp(3rem,6vw,4.5rem) 0 2rem; }
+.footer__grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2.5rem; align-items:start; }
+.footer__brand img{ height:80px; margin-bottom:1.2rem; filter:brightness(0) invert(1); opacity:.92; }
+.footer__brand p{ font-size:.9rem; max-width:300px; line-height:1.7; }
+.footer h5{ font-family:var(--sans); font-weight:500; font-size:.76rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:1.2rem; }
+.footer ul{ list-style:none; display:flex; flex-direction:column; gap:.7rem; }
+.footer ul a{ font-size:.92rem; color:rgba(255,255,255,.72); transition:.3s; }
+.footer ul a:hover{ color:#fff; padding-left:4px; }
+.footer__bottom{ border-top:1px solid rgba(255,255,255,.12); margin-top:3rem; padding-top:1.6rem; text-align:center; font-size:.8rem; letter-spacing:.05em; color:rgba(255,255,255,.5); }
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+#light-box{
+  position:fixed; inset:0; z-index:9999; display:none;
+  background:rgba(120,122,129,.82); backdrop-filter:blur(2px);
+  align-items:center; justify-content:center;
+}
+#light-box.open{ display:flex; animation:lbfade .3s ease; }
+@keyframes lbfade{ from{opacity:0;} to{opacity:1;} }
+#light-box-image{ max-width:82vw; max-height:82vh; border-radius:10px; box-shadow:0 30px 80px rgba(0,0,0,.6); }
+.lb-btn{
+  position:absolute; color:#fff; cursor:pointer; z-index:2; user-select:none;
+  width:56px; height:56px; display:flex; align-items:center; justify-content:center;
+  font-size:1.8rem; border-radius:50%; background:rgba(38,36,34,.42); transition:.3s;
+}
+.lb-btn:hover{ background:var(--coral); }
+#close-btn{ top:26px; right:32px; font-size:1.5rem; }
+#next-button{ top:50%; right:32px; transform:translateY(-50%); }
+#previous-button{ top:50%; left:32px; transform:translateY(-50%); }
+
+.hidden-fotos{ display:none; }
+
+/* ============================================================
+   FLOATING BOOK (mobile)
+   ============================================================ */
+.floating-book{
+  position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:900;
+  display:none; box-shadow:0 12px 30px rgba(199,95,66,.5);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:900px){
+  .about__grid{ grid-template-columns:1fr; }
+  .about__media::before{ display:none; }
+  .room{ grid-template-columns:1fr; }
+  .room--reverse .room__media{ order:0; }
+  .exp-grid{ grid-template-columns:1fr; }
+  .contact__grid{ grid-template-columns:1fr; }
+  .footer__grid{ grid-template-columns:1fr; gap:2rem; }
+}
+@media (max-width:768px){
+  .nav__links{
+    position:fixed; inset:0 0 0 auto; width:min(80vw,340px); height:100vh;
+    background:var(--warm-white); flex-direction:column; justify-content:center; gap:1.8rem;
+    transform:translateX(100%); transition:transform .4s ease; box-shadow:-10px 0 40px rgba(0,0,0,.2);
+    padding:2rem;
+  }
+  .nav__links.open{ transform:translateX(0); }
+  .nav__links a{ color:var(--ink); font-size:1rem; }
+  .nav__cta{ display:none; }
+  .nav__cta-mobile{ display:inline-flex; }
+  .nav__toggle{ display:flex; z-index:1001; }
+  .nav.menu-open .nav__toggle span{ background:var(--ink); }
+  .nav.menu-open .nav__toggle span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav.menu-open .nav__toggle span:nth-child(2){ opacity:0; }
+  .nav.menu-open .nav__toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  .floating-book{ display:inline-flex; }
+  .hero__scroll{ display:none; }
+  #next-button{ right:12px; } #previous-button{ left:12px; } #close-btn{ right:16px; top:16px; }
+  #light-box-image{ max-width:92vw; }
+}
+</style>
 </head>
-
-
 <body>
 
-<header>
-  
-  <a href="index.html"><img id="logo" alt="Hotel logo" src="images/FullLogo_Transparent_NoBuffer.png"></a>
+<!-- Flag symbols (self-contained, no external requests) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flag-co" viewBox="0 0 60 40">
+    <rect width="60" height="40" fill="#FCD116"/>
+    <rect y="20" width="60" height="10" fill="#003893"/>
+    <rect y="30" width="60" height="10" fill="#CE1126"/>
+  </symbol>
+  <symbol id="flag-us" viewBox="0 0 60 40">
+    <rect width="60" height="40" fill="#fff"/>
+    <g fill="#B22234">
+      <rect width="60" height="3.08"/><rect y="6.15" width="60" height="3.08"/>
+      <rect y="12.3" width="60" height="3.08"/><rect y="18.46" width="60" height="3.08"/>
+      <rect y="24.6" width="60" height="3.08"/><rect y="30.76" width="60" height="3.08"/>
+      <rect y="36.92" width="60" height="3.08"/>
+    </g>
+    <rect width="26" height="21.54" fill="#3C3B6E"/>
+    <g fill="#fff">
+      <circle cx="4.5" cy="4" r="1.3"/><circle cx="13" cy="4" r="1.3"/><circle cx="21.5" cy="4" r="1.3"/>
+      <circle cx="8.7" cy="8" r="1.3"/><circle cx="17.2" cy="8" r="1.3"/>
+      <circle cx="4.5" cy="12" r="1.3"/><circle cx="13" cy="12" r="1.3"/><circle cx="21.5" cy="12" r="1.3"/>
+      <circle cx="8.7" cy="16" r="1.3"/><circle cx="17.2" cy="16" r="1.3"/>
+    </g>
+  </symbol>
+</svg>
 
-  <nav>
-    <ul>
-      <li><a href="#about-us">ABOUT US</a></li>
-      <li><a href="#our-rooms">OUR ROOMS</a></li>
-      <li><a href="#contact-us">CONTACT US</a></li>
-    </ul>
-  </nav>
-
-
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo"><img src="images/FullLogo_Transparent_NoBuffer.png" alt="La Puesta del Sol"></a>
+  <ul class="nav__links" id="navLinks">
+    <li><a class="nav__link" href="#about" data-i18n="nav.about">Nosotros</a></li>
+    <li><a class="nav__link" href="#rooms" data-i18n="nav.rooms">Habitaciones</a></li>
+    <li><a class="nav__link" href="#experiences" data-i18n="nav.experiences">Experiencias</a></li>
+    <li><a class="nav__link" href="#contact" data-i18n="nav.contact">Contacto</a></li>
+    <li><a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--primary nav__cta-mobile" data-i18n="nav.book">Reservar</a></li>
+  </ul>
+  <div class="nav__actions">
+    <div class="lang" id="lang">
+      <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+        <svg class="flag" id="langFlag"><use href="#flag-co" id="langFlagUse"/></svg>
+        <span id="langCode">ES</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="lang__menu" id="langMenu" role="menu">
+        <button class="lang__opt" data-lang="es" role="menuitem">
+          <svg class="flag"><use href="#flag-co"/></svg>
+          <span>Español</span>
+          <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg>
+        </button>
+        <button class="lang__opt" data-lang="en" role="menuitem">
+          <svg class="flag"><use href="#flag-us"/></svg>
+          <span>English</span>
+          <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--primary nav__cta" data-i18n="nav.book">Reservar</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
 </header>
 
-
-<main>
-  <!---Cover fotos of the main page-->  
-  <div id="cover-slideshow"></div>
-
-  <!--About us section-->
-  <section id="about-us">
-  <figure>
-    <img class="fotos" alt="hotel terrace" src="images/img-9.jpeg">
-  </figure>
-  <div id="flex-1">  
-  <h2>🌅 Welcome to La Puesta del Sol: Your Boutique Hotel in Filandia 🌅</h2>
-  <p>La Puesta del Sol is a five-room boutique hotel born from our family's return to our Colombian roots in 2021, honoring a multi-generational connection to the charming village of Filandia, Quindío. Our intimate, family-run business offers a truly personalized stay defined by its unique decor and magnificent views of the surrounding Coffee Cultural Landscape. We are ideally situated just 200 meters from the main square, placing you in the heart of Filandia's colorful streets and close to all attractions. Filandia is renowned for its authentic colonial architecture and tranquil atmosphere, offering a more traditional experience than Salento while serving as a perfect base for exploring the region.</p>
-  <p>When you stay at La Puesta del Sol, you are welcomed as family. We are dedicated to providing personalized service, including guidance on local activities, tours, and arranging private transportation. You can easily access iconic destinations like the Cocora Valley and Termales de Santa Rosa via the traditional Jeep Willys. We are always available to assist with your plans and happily converse with you in English, Spanish, and French. We invite you to experience the warmth of our hospitality and the authentic beauty of Filandia from your home with us.</p>
-</div>
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero__slides" id="heroSlides">
+    <div class="hero__slide active" style="background-image:url('images/image-2.JPEG')"></div>
+    <div class="hero__slide" style="background-image:url('images/cover-try(1).jpeg')"></div>
+    <div class="hero__slide" style="background-image:url('images/img-9.jpeg')"></div>
+  </div>
+  <div class="wrap hero__content">
+    <span class="eyebrow">Filandia · Quindío · Colombia</span>
+    <h1>La Puesta<br>del Sol</h1>
+    <p class="lead" data-i18n="hero.lead">Un hotel boutique de cinco habitaciones en las colinas del café — donde cada ventana enmarca el atardecer.</p>
+    <div class="hero__actions">
+      <a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="hero.book">Reserva tu estadía</a>
+      <a href="#rooms" class="btn btn--ghost" data-i18n="hero.rooms">Descubre las habitaciones</a>
+    </div>
+  </div>
+  <div class="hero__scroll"><span data-i18n="hero.scroll">Desplázate</span><span></span></div>
 </section>
 
-<!---OUR ROOMS SECTION / 5 ROOMS TOTAL-->
-<section id="our-rooms">
-
-<h2>Our Rooms</h2>
-
-<div id="light-box">
-  <span id="close-btn">&times;</span>
-<span id="previous-button">←</span> 
-  <img id="light-box-image" src="" alt="Full size image">
-<span id="next-button">→</span> 
-</div>
-
-<!---Standard Room-->
-<article class="left-side">
-<div class= "text-box">  
-<h3>Standard room</h3>
-<p>Our comfortable and unique stay, perfect for two. This room features a cozy double bed in a loft area, meaning guests must climb a ladder for access. Includes a private bathroom.</p>
-</div>
-<figure>
-
-<div class="room-gallery">  
-<img alt="Foto of Standard room" src="images/image-3.jpg" class="fotos">
-<img alt="Photo of Standard room" class="fotos hidden-fotos" src="images/foto-buhardilla-2.jpg" class="fotos">
-<img alt="Photo of Standard room" class="fotos hidden-fotos" src="images/foto-buhardilla-3.jpg" class="fotos">
-<img alt="Photo of Standard room" class="fotos hidden-fotos" src="images/foto-buhardilla-4.jpg" class="fotos">
-<img alt="Photo of Standard room" class="fotos hidden-fotos" src="images/foto-buhardilla-5.jpg" class="fotos">
-<img alt="Photo of Standard room" class="fotos hidden-fotos" src="images/foto-buhardilla-6.jpg" class="fotos">
-<img alt="Photo of Standard room" class="fotos hidden-fotos" src="images/foto-buhardilla-7.jpg" class="fotos">
-<img alt="Photo of Standard room" class="fotos hidden-fotos" src="images/foto-buhardilla-8.jpg" class="fotos">
-<img alt="Photo of Standard room" class="fotos hidden-fotos" src="images/foto-buhardilla-9.jpg" class="fotos">
-<img alt="Photo of Standard room" class="fotos hidden-fotos" src="images/foto-buhardilla-10.jpg" class="fotos">
-</div>
- 
-<figcaption>Prices from <strong>185 000 COP</strong> (Price varies depending time of the year)</figcaption>
-</figure>
-</article>
-
-<!---Double Room with Garden View-->
-<article class="right-side">
-<div class="text-box">
-<h3>Double Room with Garden View</h3>  
-<p>A charming room that overlooks our peaceful garden. Includes a comfortable double bed and a private bathroom, offering a quiet, tranquil stay.</p>
-</div>
-<figure>
-
-<div class="room-gallery">  
-<img alt="Photo of Double Room with Garden View" src="images/vista-1.JPEG" class="fotos">
-<img alt="Photo of Double Room with Garden View" class="fotos hidden-fotos" src="images/vista-2.JPEG">
-<img alt="Photo of Double Room with Garden View" class="fotos hidden-fotos" src="images/vista-3.JPEG">
-<img alt="Photo of Double Room with Garden View" class="fotos hidden-fotos" src="images/vista-4.JPEG">
-<img alt="Photo of Double Room with Garden View" class="fotos hidden-fotos" src="images/vista-5.JPEG">
-<img alt="Photo of Double Room with Garden View" class="fotos hidden-fotos" src="images/vista-6.JPEG">
-<img alt="Photo of Double Room with Garden View" class="fotos hidden-fotos" src="images/vista-7.JPEG">
-</div>
-
-<figcaption>Prices from <strong>235 000 COP</strong> (Price varies depending time of the year)</figcaption>
-</figure>
-</article>
-
-
-<!----Double Room with Private Bathroom--->
-<article class="left-side">
-<div class="text-box">
-<h3>Double Room with Private Bathroom</h3>
-<p>A classic and spacious option for two guests. This room offers a comfortable double bed and all the necessary amenities, including a private en-suite bathroom.</p>
-</div>  
-<figure>
-
-<div class="room-gallery">
-<img alt="Photo of Double Room with Private Bathroom" src="images/double-room-1.jpg" class="fotos">
-<img alt="Photo of Double Room with Private Bathroom" class="fotos hidden-fotos" src="images/double-room-2.jpg" class="fotos">
-<img alt="Photo of Double Room with Private Bathroom" class="fotos hidden-fotos" src="images/double-room-3.jpeg" class="fotos">
-<img alt="Photo of Double Room with Private Bathroom" class="fotos hidden-fotos" src="images/double-room-4.jpeg" class="fotos">
-<img alt="Photo of Double Room with Private Bathroom" class="fotos hidden-fotos" src="images/double-room-5.jpg" class="fotos">
-<img alt="Photo of Double Room with Private Bathroom" class="fotos hidden-fotos" src="images/double-room-6.jpg" class="fotos">
-<img alt="Photo of Double Room with Private Bathroom" class="fotos hidden-fotos" src="images/double-room-7.jpg" class="fotos">
-</div>
-
-<figcaption>Prices from <strong>210 000 COP</strong> (Price varies depending time of the year)</figcaption>
-</figure>
-</article>
-
-
-<!---Junior Suite with Mountain View--->
-<article class="right-side">
-<div class="text-box">
-<h3>Junior Suite with Mountain View	</h3>
-<p>Designed for families or small groups of up to four. This spacious suite features two comfortable double beds, a private bathroom, and includes a beautiful mountain view for a more memorable stay.</p>
-</div> 
-<figure>
-
-<div class="room-gallery">  
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-1.jpeg" class="fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-2.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-3.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-4.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-5.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-6.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-7.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-8.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-9.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-10.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-11.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-12.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-13.jpeg" class="fotos hidden-fotos">
-<img alt="Photo of Junior Suite with Mountain view" src="images/Junior-14.jpeg" class="fotos hidden-fotos">
-
-</div>
-
-<figcaption>Price for 2 people starting at <strong>330 000 COP </strong> (Maximum capacity 4: Extra person 80 000 COP)</figcaption>
-</figure>
-</article>
-
-<!------Suite with Mountain View- -->
-<article class="left-side">
-<div class="text-box">
-<h3>Suite with Mountain View</h3> 
-<p>This is our premier suite and offers the absolute best panoramic view in the entire village. Perfect for up to four guests, the spacious room features a Queen bed, a Double bed, a comfortable sofa, and a TV. It is complete with a private bathroom.</p> 
-</div>  
-<figure>
-
-<div class="room-gallery">  
-<img alt="Photo of Suite with Mountain View" src="images/suite-1.JPEG" class="fotos">
-</div>
-
-<figcaption>Price for 2 people starting at <strong>450 000 COP </strong> (Maximum capacity 4: Extra person 90 000 COP)</figcaption>
-</figure>
-</article>
-
+<!-- ===================== ABOUT ===================== -->
+<section class="about pad" id="about">
+  <div class="wrap about__grid">
+    <div class="about__media" data-reveal>
+      <img src="images/image-1.jpeg" alt="Terraza jardín con vista a las colinas del café">
+    </div>
+    <div class="about__body" data-reveal>
+      <span class="eyebrow" data-i18n="about.eyebrow">Nuestra Historia</span>
+      <h2 data-i18n="about.title">Tu hogar en Filandia</h2>
+      <p data-i18n="about.p1">En 2021, nuestra familia regresó a sus raíces colombianas y así nació La Puesta del Sol: un hotel boutique íntimo y familiar de apenas cinco habitaciones. Cada una conserva un espíritu artesanal — madera recuperada, color y detalles hechos a mano — con vistas magníficas al Paisaje Cultural Cafetero, declarado Patrimonio de la Humanidad por la UNESCO.</p>
+      <p data-i18n="about.p2">Estamos a solo 200 metros de la plaza principal de Filandia, en el corazón de sus coloridas calles coloniales, pero lo bastante retirados para despertar con el canto de los pájaros y el aire fresco de la montaña. Aquí te recibimos como a uno más de la familia: te ayudamos a organizar tu viaje, desde el Valle de Cocora hasta los termales de Santa Rosa, y con gusto conversamos contigo en inglés, español o francés.</p>
+      <div class="about__chips">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg><span data-i18n="chip.family">Negocio familiar desde 2021</span></span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg><span data-i18n="chip.rooms">5 habitaciones únicas</span></span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="chip.plaza">A 200 m de la plaza</span></span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg><span data-i18n="chip.lang">EN · ES · FR</span></span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18l6-6 4 4 8-8"/><circle cx="18" cy="6" r="1"/></svg><span data-i18n="chip.views">Vistas panorámicas a la montaña</span></span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="contact-us">
+<!-- ===================== ROOMS ===================== -->
+<section class="rooms pad" id="rooms">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" data-i18n="rooms.eyebrow">Alojamiento</span>
+      <h2 data-i18n="rooms.title">Nuestras Habitaciones</h2>
+      <p data-i18n="rooms.sub">Cinco habitaciones, cada una con su propia personalidad y decoradas a mano, desde un altillo compacto hasta la mejor panorámica de Filandia. Toca cualquier foto para ver la galería completa.</p>
+    </div>
 
-<!---Contact Us text -->
-<h2>Contact Us</h2>
-<div id="contact-us-separation">
-<h3>Book Direct & Save : Ready to plan your stay?</h3>
-<p>We guarantee that by booking directly with us, you will receive a <strong>better price</strong> than on any third-party platform.</p>
-<p>Simply fill out the brief form below to request a personalized quote, and we'll get back to you as quickly as possible. You can also <a class="bold-list" href="#call-list">reach us immediately</a> using the links provided below (WhatsApp, Phone, Email).</p>
-</div>
+    <!-- Standard -->
+    <article class="room" data-reveal>
+      <div class="room__media">
+        <div class="room-gallery">
+          <img class="fotos room__lead" src="images/image-3.jpg" alt="Habitación Estándar">
+          <img class="fotos room__thumb" src="images/foto-buhardilla-2.jpg" alt="Habitación Estándar">
+          <img class="fotos room__thumb" src="images/foto-buhardilla-3.jpg" alt="Habitación Estándar">
+          <img class="fotos room__thumb" src="images/foto-buhardilla-4.jpg" alt="Habitación Estándar">
+          <div class="room__more"><img class="fotos room__thumb" src="images/foto-buhardilla-5.jpg" alt="Habitación Estándar"><span class="room__more-count" data-i18n="more.standard">+5 fotos</span></div>
+          <img class="fotos hidden-fotos" src="images/foto-buhardilla-6.jpg" alt="Habitación Estándar">
+          <img class="fotos hidden-fotos" src="images/foto-buhardilla-7.jpg" alt="Habitación Estándar">
+          <img class="fotos hidden-fotos" src="images/foto-buhardilla-8.jpg" alt="Habitación Estándar">
+          <img class="fotos hidden-fotos" src="images/foto-buhardilla-9.jpg" alt="Habitación Estándar">
+          <img class="fotos hidden-fotos" src="images/foto-buhardilla-10.jpg" alt="Habitación Estándar">
+        </div>
+      </div>
+      <div class="room__info">
+        <span class="price-tag" data-i18n="tag.standard">Habitación Estándar</span>
+        <h3 data-i18n="title.standard">El Altillo</h3>
+        <p data-i18n="desc.standard">Nuestra habitación más pequeña y compacta — una cama doble en un altillo con encanto propio, al que se sube por una escalera, con baño privado. Lo que le falta en tamaño lo compensa con una experiencia verdaderamente única para dos.</p>
+        <div class="specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20v-2a4 4 0 0 0-8 0v2M13 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg><span data-i18n="spec.sleeps2">2 personas</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 17v-5h20v5M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M2 17v3M22 17v3"/></svg><span data-i18n="spec.loftbed">Cama doble en altillo</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2M2 12h20v3a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z"/></svg><span data-i18n="spec.privbath">Baño privado</span></span>
+        </div>
+        <a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--outline" data-i18n="btn.check">Ver disponibilidad</a>
+      </div>
+    </article>
 
-<!----Form and photo-->
-<div id="formfot">
+    <!-- Garden View -->
+    <article class="room room--reverse" data-reveal>
+      <div class="room__media">
+        <div class="room-gallery">
+          <img class="fotos room__lead" src="images/vista-1.JPEG" alt="Habitación Doble con Vista al Jardín">
+          <img class="fotos room__thumb" src="images/vista-2.JPEG" alt="Habitación Doble con Vista al Jardín">
+          <img class="fotos room__thumb" src="images/vista-3.JPEG" alt="Habitación Doble con Vista al Jardín">
+          <img class="fotos room__thumb" src="images/vista-4.JPEG" alt="Habitación Doble con Vista al Jardín">
+          <div class="room__more"><img class="fotos room__thumb" src="images/vista-5.JPEG" alt="Habitación Doble con Vista al Jardín"><span class="room__more-count" data-i18n="more.garden">+2 fotos</span></div>
+          <img class="fotos hidden-fotos" src="images/vista-6.JPEG" alt="Habitación Doble con Vista al Jardín">
+          <img class="fotos hidden-fotos" src="images/vista-7.JPEG" alt="Habitación Doble con Vista al Jardín">
+        </div>
+      </div>
+      <div class="room__info">
+        <span class="price-tag" data-i18n="tag.garden">Habitación Doble · Vista al Jardín</span>
+        <h3 data-i18n="title.garden">La Habitación del Jardín</h3>
+        <p data-i18n="desc.garden">Una habitación serena que se abre a nuestro jardín. Cama doble cómoda y baño privado, ideal para una estadía tranquila y reparadora, rodeada de plantas y del canto de los pájaros.</p>
+        <div class="specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20v-2a4 4 0 0 0-8 0v2M13 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg><span data-i18n="spec.sleeps2">2 personas</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 17v-5h20v5M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M2 17v3M22 17v3"/></svg><span data-i18n="spec.doublebed">Cama doble</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2M2 12h20v3a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z"/></svg><span data-i18n="spec.privbath">Baño privado</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 8c0 4 3 6 7 6M19 8c0 4-3 6-7 6"/></svg><span data-i18n="spec.gardenview">Vista al jardín</span></span>
+        </div>
+        <a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--outline" data-i18n="btn.check">Ver disponibilidad</a>
+      </div>
+    </article>
 
- <!-- Form action API Endpoint  -->
-<form action="https://api.web3forms.com/submit" method="POST" id="form">
+    <!-- Double Private Bathroom -->
+    <article class="room" data-reveal>
+      <div class="room__media">
+        <div class="room-gallery">
+          <img class="fotos room__lead" src="images/double-room-1.jpg" alt="Habitación Doble con Baño Privado">
+          <img class="fotos room__thumb" src="images/double-room-2.jpg" alt="Habitación Doble con Baño Privado">
+          <img class="fotos room__thumb" src="images/double-room-3.jpeg" alt="Habitación Doble con Baño Privado">
+          <img class="fotos room__thumb" src="images/double-room-4.jpeg" alt="Habitación Doble con Baño Privado">
+          <div class="room__more"><img class="fotos room__thumb" src="images/double-room-5.jpg" alt="Habitación Doble con Baño Privado"><span class="room__more-count" data-i18n="more.double">+2 fotos</span></div>
+          <img class="fotos hidden-fotos" src="images/double-room-6.jpg" alt="Habitación Doble con Baño Privado">
+          <img class="fotos hidden-fotos" src="images/double-room-7.jpg" alt="Habitación Doble con Baño Privado">
+        </div>
+      </div>
+      <div class="room__info">
+        <span class="price-tag" data-i18n="tag.double">Habitación Doble · Baño Privado</span>
+        <h3 data-i18n="title.double">La Doble Clásica</h3>
+        <p data-i18n="desc.double">Una opción clásica para dos: cama doble cómoda, todo a la mano y baño privado en la habitación, con la calidez sencilla de la madera natural.</p>
+        <div class="specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20v-2a4 4 0 0 0-8 0v2M13 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg><span data-i18n="spec.sleeps2">2 personas</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 17v-5h20v5M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M2 17v3M22 17v3"/></svg><span data-i18n="spec.doublebed">Cama doble</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2M2 12h20v3a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z"/></svg><span data-i18n="spec.ensuite">Baño en la habitación</span></span>
+        </div>
+        <a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--outline" data-i18n="btn.check">Ver disponibilidad</a>
+      </div>
+    </article>
 
-    <!-- Your Access key here. Don't worry this can be public -->
-  <input type="hidden" name="access_key" value="bdbc19fe-c171-4f9c-971e-d96cea2ab34c">
+    <!-- Junior Suite -->
+    <article class="room room--reverse" data-reveal>
+      <div class="room__media">
+        <div class="room-gallery">
+          <img class="fotos room__lead" src="images/Junior-1.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos room__thumb" src="images/Junior-2.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos room__thumb" src="images/Junior-3.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos room__thumb" src="images/Junior-4.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <div class="room__more"><img class="fotos room__thumb" src="images/Junior-5.jpeg" alt="Junior Suite con Vista a la Montaña"><span class="room__more-count" data-i18n="more.junior">+9 fotos</span></div>
+          <img class="fotos hidden-fotos" src="images/Junior-6.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos hidden-fotos" src="images/Junior-7.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos hidden-fotos" src="images/Junior-8.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos hidden-fotos" src="images/Junior-9.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos hidden-fotos" src="images/Junior-10.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos hidden-fotos" src="images/Junior-11.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos hidden-fotos" src="images/Junior-12.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos hidden-fotos" src="images/Junior-13.jpeg" alt="Junior Suite con Vista a la Montaña">
+          <img class="fotos hidden-fotos" src="images/Junior-14.jpeg" alt="Junior Suite con Vista a la Montaña">
+        </div>
+      </div>
+      <div class="room__info">
+        <span class="price-tag" data-i18n="tag.junior">Junior Suite · Vista a la Montaña</span>
+        <h3 data-i18n="title.junior">La Suite de la Montaña</h3>
+        <p data-i18n="desc.junior">Pensada para familias y grupos pequeños, con dos cómodas camas dobles, baño privado y una hermosa vista a la montaña para despertar cada día. El espacio ideal para compartir en familia.</p>
+        <div class="specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20v-2a4 4 0 0 0-8 0v2M13 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM23 20v-2a4 4 0 0 0-3-3.87"/></svg><span data-i18n="spec.sleeps4">Hasta 4 personas</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 17v-5h20v5M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M2 17v3M22 17v3"/></svg><span data-i18n="spec.twobeds">Dos camas dobles</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2M2 12h20v3a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z"/></svg><span data-i18n="spec.privbath">Baño privado</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20l6-8 4 5 3-4 5 7"/><path d="M3 20h18"/></svg><span data-i18n="spec.mountainview">Vista a la montaña</span></span>
+        </div>
+        <a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--outline" data-i18n="btn.check">Ver disponibilidad</a>
+      </div>
+    </article>
 
-    <!-- Optional: Can be type="hidden" or type="text" for subject -->
-<input type="hidden" name="subject" value="Solicitud de fechas">
+    <!-- Suite -->
+    <article class="room room--single" data-reveal>
+      <div class="room__media">
+        <div class="room-gallery">
+          <img class="fotos room__lead" src="images/suite-1.JPEG" alt="Suite con Vista a la Montaña">
+        </div>
+      </div>
+      <div class="room__info">
+        <span class="price-tag" data-i18n="tag.suite">Suite · Vista a la Montaña</span>
+        <h3 data-i18n="title.suite">La Suite del Atardecer</h3>
+        <p data-i18n="desc.suite">Nuestra habitación estrella, con la mejor panorámica de todo Filandia. Ventanales de piso a techo enmarcan el valle por dos costados — cama Queen y cama doble, sofá y TV, y baño privado. Contempla el atardecer sin salir de la cama.</p>
+        <div class="specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20v-2a4 4 0 0 0-8 0v2M13 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM23 20v-2a4 4 0 0 0-3-3.87"/></svg><span data-i18n="spec.sleeps4">Hasta 4 personas</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 17v-5h20v5M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M2 17v3M22 17v3"/></svg><span data-i18n="spec.queensofa">Queen + doble + sofá</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg><span data-i18n="spec.tv">Smart TV</span></span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg><span data-i18n="spec.bestview">La mejor vista del pueblo</span></span>
+        </div>
+        <a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="btn.suite">Reservar la Suite</a>
+      </div>
+    </article>
 
-    <!-- Optional: From Name you want to see in the email
-          Default is "Notifications". you can overwrite here -->
- <input type="hidden" name="from_name" value="La Puesta del Sol">
-
-    <!-- Optional: Redirect URL after form submission -->
-    <input type="hidden" name="redirect" value="https://web3forms.com/success">
-
-    <!-- Optional: Add botcheck for basic spam protection. captcha is recommened -->
-    <input type="checkbox" name="botcheck" id="" style="display: none;">
-  <div class="label-1">
-  <label for="yourname">NAME:</label>
-  <input id="yourname" type="text" name="user_name" required>
   </div>
-
-  <div class="label-1">
-  <label for="youremail">E-MAIL:</label>
-  <input id="youremail" type="email" name="user_email" required>
-  </div>
-
-  <div class="label-1">
-  <label for="yourphone">PHONE NUMBER:</label>
-  <input id="yourphone" type="tel" name="user_phone" required>
-  </div>
- 
-  <div class="label-1">
-  <label for="check-in">CHECK-IN:</label>
-  <input id="check-in" type="date" name="user_checkin" required>
-  </div>
-
-  <div class="label-1">
-  <label for="check-out">CHECK-OUT:</label>
-  <input id="check-out" type="date" name="user_checkout" required>
-  </div>
-
-  <div class="label-1">
-  <label for="number-guests">NUMBER OF GUESTS:</label>
-  <input id="number-guests" type="number" min="1" max="14" name="user_numberGuests" required>
-  </div>
-
-  <div class="label-1">
-  <label for="room_selection">ROOM TYPE:</label>
-  <select name="user_room" id="room_selection" required>
-    <option value="" selected disabled>--------------------OUR ROOMS----------------------</option>
-    <option value="standard">Standard Room</option>
-    <option value="garden">Double Room with Garden View</option>
-    <option value="private">Double Room with Private Bathroom</option>
-    <option value="junior">Junior Suite with Mountain View</option>
-    <option value="suite">Suite with Mountain View</option>
-  </select>
-  </div>
-
-  <div class="label-1">
-  <label for="add-details">ADDITIONAL DETAILS:</label> 
-  <textarea id="add-details" name="user_details" rows="8" cols="40" placeholder="IF YOU WANT MORE THAN ONE ROOM, PLEASE ADD ADDITIONAL DETAILS HERE" maxlength="500"></textarea>
-  </div>
-  <input id="submit-button" type="submit" value="SEND!">
-  
-</form>
-<figure>
-<img id= "finalfoto" src="images/image-1.jpeg">
-</figure>
-</div>
 </section>
 
-
-<!---Direct contact numbers--->
-<section id="call-list">
-
-<h2>To speak to us directly</h2>
-
-<ul id="call-list-space">
-  <li>Call-us: <a href="tel:+573244455090">+57 324-445-5090</a></li>
-  <li>WhatsApp: <a href="https://wa.me/573244455090" target="_blank">Click-Here!</a></li>
-  <li>E-mail: <a href="mailto:puestadelsolfilandia@gmail.com">puestadelsolfilandia@gmail.com</a></li>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.534999845044!2d-75.6616666252612!3d4.676650995298279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e388964e09d35d3%3A0xe4058057053375d2!2sLa%20Puesta%20del%20Sol!5e0!3m2!1sen!2ses!4v1759133313787!5m2!1sen!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</ul>
-
-
+<!-- ===================== EXPERIENCES ===================== -->
+<section class="experiences pad" id="experiences">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" data-i18n="exp.eyebrow">Más allá de tu puerta</span>
+      <h2 data-i18n="exp.title">El Eje Cafetero te espera</h2>
+      <p data-i18n="exp.sub">Filandia es el corazón tranquilo del Eje Cafetero de Colombia. Te ayudamos a organizar cada salida — tours, transporte y el tradicional Jeep Willys incluidos.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card" data-reveal>
+        <div class="exp-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19h16M6 19V9l6-4 6 4v10M9 19v-4h6v4"/></svg></div>
+        <h4 data-i18n="exp.plaza.t">La Plaza Colorida</h4>
+        <p data-i18n="exp.plaza.d">La plaza principal de Filandia, a solo 200 metros, resplandece con balcones pintados, tiendas de artesanos y su famoso mirador.</p>
+      </div>
+      <div class="exp-card" data-reveal>
+        <div class="exp-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 20l5-9 4 5 3-5 6 9z"/><path d="M3 20h18"/></svg></div>
+        <h4 data-i18n="exp.cocora.t">Valle de Cocora</h4>
+        <p data-i18n="exp.cocora.d">Camina entre las imponentes palmas de cera — las más altas del mundo — por senderos de bosque de niebla, a poca distancia de tu puerta.</p>
+      </div>
+      <div class="exp-card" data-reveal>
+        <div class="exp-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 8h13a4 4 0 0 1 0 8h-1M4 8v9a2 2 0 0 0 2 2h7M8 4v2M12 4v2"/></svg></div>
+        <h4 data-i18n="exp.coffee.t">Tours de Café</h4>
+        <p data-i18n="exp.coffee.d">Visita una finca cafetera, recoge los granos y prueba una taza de la semilla a la taza — la historia de la región en tus manos.</p>
+      </div>
+      <div class="exp-card" data-reveal>
+        <div class="exp-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3V9h13l4 4v4h-2M9 17h6"/></svg></div>
+        <h4 data-i18n="exp.jeep.t">Paseos en Jeep Willys</h4>
+        <p data-i18n="exp.jeep.d">Súbete a un clásico Jeep Willys — el ícono del transporte cafetero — para llegar a valles, cascadas y miradores escondidos.</p>
+      </div>
+      <div class="exp-card" data-reveal>
+        <div class="exp-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 14c-1.5-2 0-4 1-5M12 14c-1.5-2 0-4 1-5M17 14c-1.5-2 0-4 1-5M4 18h16v2H4z"/></svg></div>
+        <h4 data-i18n="exp.springs.t">Termales de Santa Rosa</h4>
+        <p data-i18n="exp.springs.d">Sumérgete en piscinas termales naturales bajo una cascada — el descanso perfecto tras un día explorando las montañas.</p>
+      </div>
+      <div class="exp-card" data-reveal>
+        <div class="exp-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18"/></svg></div>
+        <h4 data-i18n="exp.concierge.t">Siempre a tu Servicio</h4>
+        <p data-i18n="exp.concierge.d">Transporte privado, recomendaciones de restaurantes, reserva de tours — solo pregunta. Hablamos inglés, español y francés, y nos encanta ayudarte.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-</main>
+<!-- ===================== BOOK / CONTACT ===================== -->
+<section class="book pad" id="contact">
+  <div class="wrap">
+    <div class="book__banner" data-reveal>
+      <span class="eyebrow" data-i18n="book.eyebrow">Reserva Directa y Ahorra</span>
+      <h2 data-i18n="book.title">¿Listo para planear tu estadía?</h2>
+      <p data-i18n="book.p">Reserva directamente con nosotros y siempre tendrás una mejor tarifa que en cualquier plataforma externa — garantizado. Consulta la disponibilidad en tiempo real y reserva en segundos.</p>
+      <a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--light" data-i18n="book.btn">Ver disponibilidad y reservar</a>
+    </div>
 
+    <div class="contact__grid">
+      <div class="contact__cards" data-reveal>
+        <a class="contact-card" href="https://wa.me/573244455090" target="_blank" rel="noopener">
+          <span class="contact-card__icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.4.4 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3A3 3 0 0 0 6.5 10a5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c2.1.9 2.1.6 2.5.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg></span>
+          <span><small data-i18n="contact.whatsapp">WhatsApp</small><strong>+57 324 445 5090</strong></span>
+        </a>
+        <a class="contact-card" href="tel:+573244455090">
+          <span class="contact-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <span><small data-i18n="contact.callus">Llámanos</small><strong>+57 324 445 5090</strong></span>
+        </a>
+        <a class="contact-card" href="mailto:puestadelsolfilandia@gmail.com">
+          <span class="contact-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+          <span><small data-i18n="contact.email">Correo</small><strong>puestadelsolfilandia@gmail.com</strong></span>
+        </a>
+        <a class="contact-card" href="https://maps.google.com/?q=La+Puesta+del+Sol+Filandia" target="_blank" rel="noopener">
+          <span class="contact-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span><small data-i18n="contact.findus">Encuéntranos</small><strong>Carrera 8 #6-25, Filandia</strong></span>
+        </a>
+      </div>
+      <div class="contact__map" data-reveal>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.534999845044!2d-75.6616666252612!3d4.676650995298279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e388964e09d35d3%3A0xe4058057053375d2!2sLa%20Puesta%20del%20Sol!5e0!3m2!1sen!2ses!4v1759133313787!5m2!1sen!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer>
-<p>La Puesta del Sol | Filandia | Carrera 8#6-25 </p>
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img src="images/FullLogo_Transparent_NoBuffer.png" alt="La Puesta del Sol">
+      <p data-i18n="footer.brand">Un hotel boutique íntimo y familiar en el corazón de Filandia, Quindío — donde las colinas del café se encuentran con el atardecer.</p>
+    </div>
+    <div>
+      <h5 data-i18n="footer.explore">Explora</h5>
+      <ul>
+        <li><a href="#about" data-i18n="nav.about">Nosotros</a></li>
+        <li><a href="#rooms" data-i18n="nav.rooms">Habitaciones</a></li>
+        <li><a href="#experiences" data-i18n="nav.experiences">Experiencias</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-i18n="footer.getintouch">Contáctanos</h5>
+      <ul>
+        <li><a href="https://wa.me/573244455090" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="tel:+573244455090">+57 324 445 5090</a></li>
+        <li><a href="mailto:puestadelsolfilandia@gmail.com" data-i18n="footer.emailus">Escríbenos</a></li>
+        <li><a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" data-i18n="footer.book">Reservar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">© 2026 La Puesta del Sol · Hotel Boutique · Filandia, Quindío, Colombia</div>
 </footer>
 
-<script src="script.js"></script>
+<!-- Floating book button (mobile) -->
+<a href="https://lulocloud.com/book/filandia-puesta-de-sol-zdynv9" target="_blank" rel="noopener" class="btn btn--primary floating-book" data-i18n="hero.book">Reserva tu estadía</a>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div id="light-box">
+  <span id="close-btn" class="lb-btn">&times;</span>
+  <span id="previous-button" class="lb-btn">&#8592;</span>
+  <img id="light-box-image" src="" alt="Foto de habitación en tamaño completo">
+  <span id="next-button" class="lb-btn">&#8594;</span>
+</div>
+
+<script>
+/* ============================================================
+   TRANSLATIONS
+   ============================================================ */
+const I18N = {
+  es: {
+    'nav.about':'Nosotros','nav.rooms':'Habitaciones','nav.experiences':'Experiencias','nav.contact':'Contacto','nav.book':'Reservar',
+    'hero.lead':'Un hotel boutique de cinco habitaciones en las colinas del café — donde cada ventana enmarca el atardecer.',
+    'hero.book':'Reserva tu estadía','hero.rooms':'Descubre las habitaciones','hero.scroll':'Desplázate',
+    'about.eyebrow':'Nuestra Historia','about.title':'Tu hogar en Filandia',
+    'about.p1':'En 2021, nuestra familia regresó a sus raíces colombianas y así nació La Puesta del Sol: un hotel boutique íntimo y familiar de apenas cinco habitaciones. Cada una conserva un espíritu artesanal — madera recuperada, color y detalles hechos a mano — con vistas magníficas al Paisaje Cultural Cafetero, declarado Patrimonio de la Humanidad por la UNESCO.',
+    'about.p2':'Estamos a solo 200 metros de la plaza principal de Filandia, en el corazón de sus coloridas calles coloniales, pero lo bastante retirados para despertar con el canto de los pájaros y el aire fresco de la montaña. Aquí te recibimos como a uno más de la familia: te ayudamos a organizar tu viaje, desde el Valle de Cocora hasta los termales de Santa Rosa, y con gusto conversamos contigo en inglés, español o francés.',
+    'chip.family':'Negocio familiar desde 2021','chip.rooms':'5 habitaciones únicas','chip.plaza':'A 200 m de la plaza','chip.lang':'EN · ES · FR','chip.views':'Vistas panorámicas a la montaña',
+    'rooms.eyebrow':'Alojamiento','rooms.title':'Nuestras Habitaciones',
+    'rooms.sub':'Cinco habitaciones, cada una con su propia personalidad y decoradas a mano, desde un altillo compacto hasta la mejor panorámica de Filandia. Toca cualquier foto para ver la galería completa.',
+    'tag.standard':'Habitación Estándar','title.standard':'El Altillo',
+    'desc.standard':'Nuestra habitación más pequeña y compacta — una cama doble en un altillo con encanto propio, al que se sube por una escalera, con baño privado. Lo que le falta en tamaño lo compensa con una experiencia verdaderamente única para dos.',
+    'tag.garden':'Habitación Doble · Vista al Jardín','title.garden':'La Habitación del Jardín',
+    'desc.garden':'Una habitación serena que se abre a nuestro jardín. Cama doble cómoda y baño privado, ideal para una estadía tranquila y reparadora, rodeada de plantas y del canto de los pájaros.',
+    'tag.double':'Habitación Doble · Baño Privado','title.double':'La Doble Clásica',
+    'desc.double':'Una opción clásica para dos: cama doble cómoda, todo a la mano y baño privado en la habitación, con la calidez sencilla de la madera natural.',
+    'tag.junior':'Junior Suite · Vista a la Montaña','title.junior':'La Suite de la Montaña',
+    'desc.junior':'Pensada para familias y grupos pequeños, con dos cómodas camas dobles, baño privado y una hermosa vista a la montaña para despertar cada día. El espacio ideal para compartir en familia.',
+    'tag.suite':'Suite · Vista a la Montaña','title.suite':'La Suite del Atardecer',
+    'desc.suite':'Nuestra habitación estrella, con la mejor panorámica de todo Filandia. Ventanales de piso a techo enmarcan el valle por dos costados — cama Queen y cama doble, sofá y TV, y baño privado. Contempla el atardecer sin salir de la cama.',
+    'spec.sleeps2':'2 personas','spec.loftbed':'Cama doble en altillo','spec.privbath':'Baño privado','spec.doublebed':'Cama doble','spec.gardenview':'Vista al jardín','spec.ensuite':'Baño en la habitación','spec.sleeps4':'Hasta 4 personas','spec.twobeds':'Dos camas dobles','spec.mountainview':'Vista a la montaña','spec.queensofa':'Queen + doble + sofá','spec.tv':'Smart TV','spec.bestview':'La mejor vista del pueblo',
+    'btn.check':'Ver disponibilidad','btn.suite':'Reservar la Suite',
+    'more.standard':'+5 fotos','more.garden':'+2 fotos','more.double':'+2 fotos','more.junior':'+9 fotos',
+    'exp.eyebrow':'Más allá de tu puerta','exp.title':'El Eje Cafetero te espera',
+    'exp.sub':'Filandia es el corazón tranquilo del Eje Cafetero de Colombia. Te ayudamos a organizar cada salida — tours, transporte y el tradicional Jeep Willys incluidos.',
+    'exp.plaza.t':'La Plaza Colorida','exp.plaza.d':'La plaza principal de Filandia, a solo 200 metros, resplandece con balcones pintados, tiendas de artesanos y su famoso mirador.',
+    'exp.cocora.t':'Valle de Cocora','exp.cocora.d':'Camina entre las imponentes palmas de cera — las más altas del mundo — por senderos de bosque de niebla, a poca distancia de tu puerta.',
+    'exp.coffee.t':'Tours de Café','exp.coffee.d':'Visita una finca cafetera, recoge los granos y prueba una taza de la semilla a la taza — la historia de la región en tus manos.',
+    'exp.jeep.t':'Paseos en Jeep Willys','exp.jeep.d':'Súbete a un clásico Jeep Willys — el ícono del transporte cafetero — para llegar a valles, cascadas y miradores escondidos.',
+    'exp.springs.t':'Termales de Santa Rosa','exp.springs.d':'Sumérgete en piscinas termales naturales bajo una cascada — el descanso perfecto tras un día explorando las montañas.',
+    'exp.concierge.t':'Siempre a tu Servicio','exp.concierge.d':'Transporte privado, recomendaciones de restaurantes, reserva de tours — solo pregunta. Hablamos inglés, español y francés, y nos encanta ayudarte.',
+    'book.eyebrow':'Reserva Directa y Ahorra','book.title':'¿Listo para planear tu estadía?',
+    'book.p':'Reserva directamente con nosotros y siempre tendrás una mejor tarifa que en cualquier plataforma externa — garantizado. Consulta la disponibilidad en tiempo real y reserva en segundos.',
+    'book.btn':'Ver disponibilidad y reservar',
+    'contact.whatsapp':'WhatsApp','contact.callus':'Llámanos','contact.email':'Correo','contact.findus':'Encuéntranos',
+    'footer.brand':'Un hotel boutique íntimo y familiar en el corazón de Filandia, Quindío — donde las colinas del café se encuentran con el atardecer.',
+    'footer.explore':'Explora','footer.getintouch':'Contáctanos','footer.emailus':'Escríbenos','footer.book':'Reservar',
+    'title.page':'La Puesta del Sol | Hotel Boutique en Filandia, Eje Cafetero'
+  },
+  en: {
+    'nav.about':'Our Story','nav.rooms':'Rooms','nav.experiences':'Experiences','nav.contact':'Contact','nav.book':'Book Now',
+    'hero.lead':'A five-room boutique hotel above the coffee hills — where every window frames the sunset.',
+    'hero.book':'Book Your Stay','hero.rooms':'Discover the Rooms','hero.scroll':'Scroll',
+    'about.eyebrow':'Our Story','about.title':'Welcome home to Filandia',
+    'about.p1':"Born in 2021 from our family's return to our Colombian roots, La Puesta del Sol is an intimate, family-run boutique hotel of just five rooms. Each one is shaped by hand — reclaimed wood, colour and craft — and opens onto magnificent views of the UNESCO Coffee Cultural Landscape.",
+    'about.p2':"We sit just 200 metres from Filandia's main square, at the heart of its colourful colonial streets, yet far enough to wake to birdsong and mountain air. When you stay with us, you're welcomed as family — we'll help you plan everything, from the Cocora Valley to the Santa Rosa hot springs, and we're always happy to chat in English, Spanish or French.",
+    'chip.family':'Family-run since 2021','chip.rooms':'5 unique rooms','chip.plaza':'200 m from the plaza','chip.lang':'EN · ES · FR','chip.views':'Panoramic mountain views',
+    'rooms.eyebrow':"Where you'll rest",'rooms.title':'Our Rooms',
+    'rooms.sub':'Five handcrafted spaces, each with its own character — from a compact loft to the finest panorama in Filandia. Tap any photo to explore the full gallery.',
+    'tag.standard':'Standard Room','title.standard':'The Loft',
+    'desc.standard':'Our smallest and most compact room — a double bed tucked into a characterful loft, reached by a ladder, with its own private bathroom. What it lacks in size it makes up for in a genuinely unique experience for two.',
+    'tag.garden':'Double Room · Garden View','title.garden':'The Garden Room',
+    'desc.garden':'A serene room opening onto our green garden. A comfortable double bed and private bathroom make for a quiet, restful stay surrounded by plants and birdsong.',
+    'tag.double':'Double Room · Private Bathroom','title.double':'The Classic Double',
+    'desc.double':'A classic choice for two — a comfortable double bed, everything you need close at hand, and a private en-suite bathroom. Understated warmth in natural wood.',
+    'tag.junior':'Junior Suite · Mountain View','title.junior':'The Mountain Suite',
+    'desc.junior':'Made for families and small groups. Two comfortable double beds, a private bathroom, and a beautiful mountain view to wake up to — space to gather and room to breathe.',
+    'tag.suite':'Suite · Mountain View','title.suite':'The Sunset Suite',
+    'desc.suite':'Our crown jewel, with the finest panorama in all of Filandia. Floor-to-ceiling glass frames the valley on two sides — a Queen and a double bed, a sofa and TV, and a private bathroom. Watch the sun set from your bed.',
+    'spec.sleeps2':'Sleeps 2','spec.loftbed':'Loft double bed','spec.privbath':'Private bathroom','spec.doublebed':'Double bed','spec.gardenview':'Garden view','spec.ensuite':'En-suite bathroom','spec.sleeps4':'Sleeps up to 4','spec.twobeds':'Two double beds','spec.mountainview':'Mountain view','spec.queensofa':'Queen + double + sofa','spec.tv':'Smart TV','spec.bestview':'Best view in the village',
+    'btn.check':'Check Availability','btn.suite':'Reserve the Suite',
+    'more.standard':'+5 photos','more.garden':'+2 photos','more.double':'+2 photos','more.junior':'+9 photos',
+    'exp.eyebrow':'Beyond your door','exp.title':'The Coffee Region Awaits',
+    'exp.sub':"Filandia is the quiet heart of Colombia's coffee country. We'll help you arrange every outing — tours, transport and the traditional Jeep Willys included.",
+    'exp.plaza.t':'The Colourful Plaza','exp.plaza.d':"Filandia's main square, just 200 metres away, glows with painted balconies, artisan shops and its famous viewpoint tower.",
+    'exp.cocora.t':'Cocora Valley','exp.cocora.d':'Walk among the towering wax palms — the tallest in the world — through misty cloud-forest trails, a short trip from your door.',
+    'exp.coffee.t':'Coffee Farm Tours','exp.coffee.d':'Visit a working finca, pick the cherries and taste a cup from bean to brew — the story of the region in your hands.',
+    'exp.jeep.t':'Jeep Willys Rides','exp.jeep.d':'Hop aboard a classic Willys jeep — the icon of coffee-country transport — to reach valleys, waterfalls and hidden miradores.',
+    'exp.springs.t':'Santa Rosa Hot Springs','exp.springs.d':'Soak in natural thermal pools beneath a waterfall — the perfect unwind after a day exploring the mountains.',
+    'exp.concierge.t':'Always at Your Service','exp.concierge.d':'Private transport, restaurant tips, tour bookings — just ask. We speak English, Spanish and French, and we love to help.',
+    'book.eyebrow':'Book Direct & Save','book.title':'Ready to plan your stay?',
+    'book.p':"Reserve straight with us and you'll always get a better rate than any third-party platform — guaranteed. Check live availability and book in seconds.",
+    'book.btn':'Check Availability & Book',
+    'contact.whatsapp':'WhatsApp','contact.callus':'Call us','contact.email':'Email','contact.findus':'Find us',
+    'footer.brand':'An intimate, family-run boutique hotel in the heart of Filandia, Quindío — where the coffee hills meet the sunset.',
+    'footer.explore':'Explore','footer.getintouch':'Get in touch','footer.emailus':'Email us','footer.book':'Book now',
+    'title.page':'La Puesta del Sol | Boutique Hotel in Filandia, Coffee Region'
+  }
+};
+
+/* ============================================================
+   LANGUAGE SWITCH
+   ============================================================ */
+const langWrap  = document.getElementById('lang');
+const langBtn   = document.getElementById('langBtn');
+const langMenu  = document.getElementById('langMenu');
+const langCode  = document.getElementById('langCode');
+const langFlagUse = document.getElementById('langFlagUse');
+
+function setLang(lang){
+  if(!I18N[lang]) lang = 'es';
+  const dict = I18N[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.title = dict['title.page'];
+  langCode.textContent = lang.toUpperCase();
+  langFlagUse.setAttribute('href', lang === 'en' ? '#flag-us' : '#flag-co');
+  langMenu.querySelectorAll('.lang__opt').forEach(opt => {
+    opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+  });
+  try{ localStorage.setItem('lps-lang', lang); }catch(e){}
+}
+
+langBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  langWrap.classList.toggle('open');
+  langBtn.setAttribute('aria-expanded', langWrap.classList.contains('open'));
+});
+langMenu.querySelectorAll('.lang__opt').forEach(opt => {
+  opt.addEventListener('click', () => {
+    setLang(opt.getAttribute('data-lang'));
+    langWrap.classList.remove('open');
+    langBtn.setAttribute('aria-expanded', 'false');
+  });
+});
+document.addEventListener('click', (e) => {
+  if(!langWrap.contains(e.target)) langWrap.classList.remove('open');
+});
+
+/* initial language: saved choice → browser language → Spanish default */
+(function initLang(){
+  let saved = null;
+  try{ saved = localStorage.getItem('lps-lang'); }catch(e){}
+  const browser = (navigator.language || 'es').toLowerCase();
+  setLang(saved || (browser.startsWith('en') ? 'en' : 'es'));
+})();
+
+/* ============================================================
+   NAV: scroll state + mobile menu
+   ============================================================ */
+const nav = document.getElementById('nav');
+const navLinks = document.getElementById('navLinks');
+const navToggle = document.getElementById('navToggle');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  nav.classList.toggle('menu-open');
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  nav.classList.remove('menu-open');
+}));
+
+/* ============================================================
+   HERO crossfade slideshow
+   ============================================================ */
+const slides = document.querySelectorAll('.hero__slide');
+let slideIndex = 0;
+setInterval(() => {
+  slides[slideIndex].classList.remove('active');
+  slideIndex = (slideIndex + 1) % slides.length;
+  slides[slideIndex].classList.add('active');
+}, 6000);
+
+/* ============================================================
+   Scroll reveal
+   ============================================================ */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+/* ============================================================
+   Lightbox gallery (per room)
+   ============================================================ */
+const lightBox = document.querySelector("#light-box");
+const roomsSection = document.getElementById("rooms");
+const lightBoxImage = document.getElementById("light-box-image");
+const closeButton = document.getElementById("close-btn");
+const previousButton = document.getElementById("previous-button");
+const nextButton = document.getElementById("next-button");
+
+let gallery = [];
+let currentIndex = -1;
+
+function showImage(i){
+  if (!gallery.length) return;
+  currentIndex = (i + gallery.length) % gallery.length;
+  lightBoxImage.src = gallery[currentIndex].src;
+}
+
+roomsSection.addEventListener('click', (event) => {
+  const photo = event.target.closest('.fotos');
+  if (!photo) return;
+  const container = photo.closest('.room-gallery');
+  if (container){
+    gallery = Array.from(container.querySelectorAll('img.fotos'));
+    currentIndex = gallery.findIndex(p => p.src === photo.src);
+  }
+  lightBoxImage.src = photo.src;
+  lightBox.classList.add('open');
+  const multi = gallery.length > 1;
+  previousButton.style.display = multi ? 'flex' : 'none';
+  nextButton.style.display = multi ? 'flex' : 'none';
+});
+
+nextButton.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex + 1); });
+previousButton.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex - 1); });
+
+function closeLightbox(){ lightBox.classList.remove('open'); gallery = []; currentIndex = -1; }
+lightBox.addEventListener('click', (e) => {
+  if (e.target === lightBox || e.target === closeButton) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (!lightBox.classList.contains('open')) return;
+  if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  else if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+  else if (e.key === 'Escape') closeLightbox();
+});
+</script>
 </body>
-
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
