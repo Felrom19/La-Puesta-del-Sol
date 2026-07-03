@@ -448,6 +448,11 @@ section{ position:relative; }
       <circle cx="8.7" cy="16" r="1.3"/><circle cx="17.2" cy="16" r="1.3"/>
     </g>
   </symbol>
+  <symbol id="flag-fr" viewBox="0 0 60 40">
+    <rect width="20" height="40" fill="#002654"/>
+    <rect x="20" width="20" height="40" fill="#fff"/>
+    <rect x="40" width="20" height="40" fill="#ED2939"/>
+  </symbol>
 </svg>
 
 <!-- ===================== NAV ===================== -->
@@ -476,6 +481,11 @@ section{ position:relative; }
         <button class="lang__opt" data-lang="en" role="menuitem">
           <svg class="flag"><use href="#flag-us"/></svg>
           <span>English</span>
+          <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg>
+        </button>
+        <button class="lang__opt" data-lang="fr" role="menuitem">
+          <svg class="flag"><use href="#flag-fr"/></svg>
+          <span>Français</span>
           <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg>
         </button>
       </div>
@@ -876,6 +886,45 @@ const I18N = {
     'footer.brand':'An intimate, family-run boutique hotel in the heart of Filandia, Quindío — where the coffee hills meet the sunset.',
     'footer.explore':'Explore','footer.getintouch':'Get in touch','footer.emailus':'Email us','footer.book':'Book now',
     'title.page':'La Puesta del Sol | Boutique Hotel in Filandia, Coffee Region'
+  },
+  fr: {
+    'nav.about':'Notre Histoire','nav.rooms':'Chambres','nav.experiences':'Expériences','nav.contact':'Contact','nav.book':'Réserver',
+    'hero.lead':'Un hôtel boutique de cinq chambres. Au sein de la région du café, venez apprécier les plus beaux couchers de soleil.',
+    'hero.book':'Réservez votre séjour','hero.rooms':'Découvrez les chambres','hero.scroll':'Défiler',
+    'about.eyebrow':'Notre Histoire','about.title':'Comme à la maison, à Filandia',
+    'about.p1':"En 2021, notre famille est retournée à ses racines colombiennes, donnant naissance à La Puesta del Sol : un hôtel boutique de caractère familial de cinq chambres seulement. Chaque chambre est inspirée des traditions artisanales de la région, avec une vue magnifique sur le Paysage Culturel du Café, classé au Patrimoine mondial de l'UNESCO.",
+    'about.p2':"Nous sommes à seulement 200 mètres de la place principale de Filandia, au cœur de ses ruelles coloniales colorées, mais assez à l'écart pour se réveiller au chant des oiseaux et à l'air frais de la montagne. Ici, vous êtes accueillis comme un membre de la famille : nous vous aidons à organiser votre voyage, de la Vallée de Cocora aux sources thermales de Santa Rosa, et c'est toujours un plaisir d'échanger avec vous en anglais, en espagnol ou en français.",
+    'chip.family':'Entreprise familiale depuis 2021','chip.rooms':'5 chambres uniques','chip.plaza':'À 200 m de la place','chip.lang':'EN · ES · FR','chip.views':'Vue panoramique sur la montagne',
+    'rooms.eyebrow':'Hébergement','rooms.title':'Nos Chambres',
+    'rooms.sub':"Cinq chambres, chacune avec sa propre personnalité et décorée à la main, d'une mansarde compacte à la plus belle vue panoramique de Filandia. Touchez une photo pour découvrir la galerie complète.",
+    'tag.standard':'Chambre Standard','title.standard':'La Mansarde',
+    'desc.standard':'Notre chambre la plus petite et la plus compacte — un lit double niché dans une mansarde pleine de caractère, accessible par une échelle, avec salle de bain privée. Ce qui lui manque en taille, elle le compense par une expérience vraiment unique à deux.',
+    'tag.garden':'Chambre Double · Vue sur Jardin','title.garden':'La Chambre du Jardin',
+    'desc.garden':'Une chambre paisible qui donne sur notre jardin. Lit double confortable et salle de bain privée, idéale pour un séjour calme et ressourçant, entourée de plantes et du chant des oiseaux.',
+    'tag.double':'Chambre Double · Salle de Bain Privée','title.double':'La Double Classique',
+    'desc.double':'Une option classique pour deux : lit double confortable, tout à portée de main et salle de bain privée dans la chambre, avec la chaleur simple du bois naturel.',
+    'tag.junior':'Junior Suite · Vue sur la Montagne','title.junior':'La Suite de la Montagne',
+    'desc.junior':"Pensée pour les familles et les petits groupes, avec deux confortables lits doubles, une salle de bain privée et une magnifique vue sur la montagne pour se réveiller chaque jour. L'espace idéal pour se retrouver en famille.",
+    'tag.suite':'Suite · Vue sur la Montagne','title.suite':'La Suite du Coucher de Soleil',
+    'desc.suite':'Notre chambre vedette, avec la plus belle vue panoramique de tout Filandia. Des baies vitrées du sol au plafond encadrent la vallée sur deux côtés — un lit Queen et un lit double, un canapé et une TV, et une salle de bain privée. Admirez le coucher du soleil sans quitter votre lit.',
+    'spec.sleeps2':'2 personnes','spec.loftbed':'Lit double en mansarde','spec.privbath':'Salle de bain privée','spec.doublebed':'Lit double','spec.gardenview':'Vue sur jardin','spec.ensuite':'Salle de bain dans la chambre','spec.sleeps4':"Jusqu'à 4 personnes",'spec.twobeds':'Deux lits doubles','spec.mountainview':'Vue sur la montagne','spec.queensofa':'Queen + double + canapé','spec.tv':'Smart TV','spec.bestview':'La plus belle vue du village',
+    'btn.check':'Voir les disponibilités','btn.suite':'Réserver la Suite',
+    'more.standard':'+5 photos','more.garden':'+2 photos','more.double':'+2 photos','more.junior':'+9 photos',
+    'exp.eyebrow':'Au-delà de votre porte','exp.title':'La région caféière vous attend',
+    'exp.sub':'Filandia est le cœur tranquille de la région caféière colombienne. Nous vous aidons à organiser chaque sortie — visites, transport et le traditionnel Jeep Willys inclus.',
+    'exp.plaza.t':'La Place Colorée','exp.plaza.d':"La place principale de Filandia, à seulement 200 mètres, resplendit de balcons peints, de boutiques d'artisans et de son célèbre belvédère.",
+    'exp.cocora.t':'Vallée de Cocora','exp.cocora.d':'Marchez parmi les impressionnants palmiers à cire — les plus hauts du monde — sur des sentiers de forêt de nuages, à quelques pas de votre porte.',
+    'exp.coffee.t':'Visites des Caféières','exp.coffee.d':"Visitez une finca caféière, cueillez les grains et dégustez une tasse du grain à la tasse — l'histoire de la région entre vos mains.",
+    'exp.jeep.t':'Balades en Jeep Willys','exp.jeep.d':"Montez à bord d'une Jeep Willys classique — l'icône du transport caféier — pour rejoindre vallées, cascades et belvédères cachés.",
+    'exp.springs.t':'Sources Thermales de Santa Rosa','exp.springs.d':"Plongez dans des piscines thermales naturelles au pied d'une cascade — la détente parfaite après une journée à explorer les montagnes.",
+    'exp.concierge.t':'Toujours à Votre Service','exp.concierge.d':"Transport privé, recommandations de restaurants, réservation d'excursions — il suffit de demander. Nous parlons anglais, espagnol et français, et nous adorons vous aider.",
+    'book.eyebrow':'Réservez en Direct et Économisez','book.title':'Prêt à planifier votre séjour ?',
+    'book.p':"Réservez directement avec nous et bénéficiez toujours d'un meilleur tarif que sur toute plateforme tierce — garanti. Consultez les disponibilités en temps réel et réservez en quelques secondes.",
+    'book.btn':'Voir les disponibilités et réserver',
+    'contact.whatsapp':'WhatsApp','contact.callus':'Appelez-nous','contact.email':'E-mail','contact.findus':'Trouvez-nous',
+    'footer.brand':'Un hôtel boutique intimiste et familial au cœur de Filandia, Quindío — là où les collines caféières rencontrent le coucher du soleil.',
+    'footer.explore':'Explorer','footer.getintouch':'Nous Contacter','footer.emailus':'Écrivez-nous','footer.book':'Réserver',
+    'title.page':'La Puesta del Sol | Hôtel Boutique à Filandia, Région Caféière'
   }
 };
 
@@ -898,7 +947,8 @@ function setLang(lang){
   });
   document.title = dict['title.page'];
   langCode.textContent = lang.toUpperCase();
-  langFlagUse.setAttribute('href', lang === 'en' ? '#flag-us' : '#flag-co');
+  const flagMap = {es:'#flag-co', en:'#flag-us', fr:'#flag-fr'};
+  langFlagUse.setAttribute('href', flagMap[lang] || '#flag-co');
   langMenu.querySelectorAll('.lang__opt').forEach(opt => {
     opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
   });
@@ -926,7 +976,8 @@ document.addEventListener('click', (e) => {
   let saved = null;
   try{ saved = localStorage.getItem('lps-lang'); }catch(e){}
   const browser = (navigator.language || 'es').toLowerCase();
-  setLang(saved || (browser.startsWith('en') ? 'en' : 'es'));
+  const detected = browser.startsWith('en') ? 'en' : browser.startsWith('fr') ? 'fr' : 'es';
+  setLang(saved || detected);
 })();
 
 /* ============================================================
